@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { Button, Typography, styled } from '@mui/material';
 import './App.css';
+import { Delete } from '@mui/icons-material';
 
 function App() {
+
+  const LoginButton = styled(Button)(({theme})=>({
+    backgroundColor:theme.palette.danger.main,
+    color:"white",
+    "&:hover":{
+      backgroundColor:"black"
+    }
+  }));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  <Button variant='outlined' startIcon={<Delete/>} color='info'>Submit</Button>
+  <Button variant='contained'  color='secondary'>Submit</Button>
+  <Button variant='outlined' color='info'>Sub</Button>
+  <LoginButton  >Login</LoginButton>
+  <Typography variant='h4' component='p'>this is parapraph</Typography>
+    </>
   );
 }
 
