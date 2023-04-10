@@ -5,36 +5,31 @@ import React , {useState} from 'react'
 export default function Login() {
 const [open, setOpen] = useState(false);
 
-const ModalBody = styled(Box)({
-backgroundColor:'black',
-color:'white',
-position: 'absolute',
-top: '50%',
-left: '50%',
-transform: 'translate(-50%, -50%)',
-padding:'10px',
-borderRadius:'10px'
+const CustomModal = styled(Modal)({
+display:'flex',
+justifyContent:'center',
+alignItems:'center'
 })
 
 
   return (
 <>
-<Button onClick={e=>setOpen(true)}>Open modal</Button>
-<Modal
+<Button onClick={e=>setOpen(true)}>Login</Button>
+<CustomModal
   open={open}
   onClose={e=>setOpen(false)}
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <ModalBody>
+  <Box width={400} height={300} sx={{backgroundColor:'black',color:'white',padding:'20px',borderRadius:'10px'}}>
     <Typography id="modal-modal-title" variant="h6" component="h2">
       Text in a modal
     </Typography>
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
       Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
     </Typography>
-  </ModalBody>
-</Modal>
+  </Box>
+</CustomModal>
 </>
   )
 }
