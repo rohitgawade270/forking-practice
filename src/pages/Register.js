@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled';
 import { Lock } from '@mui/icons-material';
 import { Avatar, Box, Button, Checkbox, FormControlLabel, Grid, Stack, TextField, Typography } from '@mui/material'
-
+import { Link } from 'react-router-dom';
 
 
 export default function Register() {
@@ -11,10 +11,13 @@ export default function Register() {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh'
+    height: '90vh'
   })
 
-
+  const CustomLink = styled(Link)({
+    color:'blue',
+    textDecoration:'none'
+   });
 
 
   return (
@@ -50,6 +53,9 @@ export default function Register() {
               <Button fullWidth variant='contained'  color='secondary'>Sign up</Button>
             </Grid>
           </Grid>
+          <Box sx={{marginTop:'20px',textAlign:'center'}}>
+          <CustomLink to='/login'>Already have an account? Sign in</CustomLink>
+          </Box>
         </Box>
       </CustomBox>
     </>
